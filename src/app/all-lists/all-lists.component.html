@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+        <app-todo-list [todoArray]="todoarr" [addingColor]="addingClass" (passingIndex)="gettingIndex($event)" (fromTodoToProgress)="gettingOtherIndex($event)" ></app-todo-list>
+        <app-progress-list [progressArray]="progressarr" [addingColor]="addingClass" (fromProgressToDone)="gettingItemIndex($event)" (fromProgressToTodo)="movingItem($event)"></app-progress-list>
+        <app-done-list [doneArray]="donearr" [addingColor]="addingClass" (fromDoneToProgress)="gettingItemBack($event)"></app-done-list>
+    </div>
+</div>

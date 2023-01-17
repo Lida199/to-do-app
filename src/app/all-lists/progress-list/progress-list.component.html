@@ -1,0 +1,16 @@
+<div class="col">
+    <div class="card" id="border-info">
+      <h6 class="card-header d-flex align-items-center"><i class="fa-solid fa-bars-staggered me-1"></i>In progress</h6>
+      <div class="card-body">
+        <p class="card-text" *ngIf="progressArray.length === 0">List is empty</p>
+        <div *ngIf="progressArray.length > 0">
+           <div class="card mb-3" *ngFor="let task of progressArray; let i = index">
+            <div class="card-body">
+              <p class="card-text d-flex align-items-center justify-content-between"><span>{{i + 1}}. {{task.body}}</span><span><button class="btn btn-primary me-2" (click)="bindingTheIndex(i)"><</button><button class="btn btn-success" (click)="gettingItemIndex(i)">></button></span></p>
+              <button type="button" [ngClass]="addingColor(task.difficulty)" class="btn">{{task.difficulty}}</button>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+</div>
